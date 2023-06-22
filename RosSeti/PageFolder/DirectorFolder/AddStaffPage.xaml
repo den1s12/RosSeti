@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RosSeti.PageFolder.DirectorFolder"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="900"
       Title="AddStaffPage">
 
     <Grid>
@@ -60,27 +60,28 @@
                  Grid.Row="3" Grid.Column="5"
                  Style="{DynamicResource TextBox2}"/>
 
-        <Label Content="Должность" Grid.Column="4"
+        <Label Content="Пол" Grid.Column="4"
                Grid.Row="5" Style="{DynamicResource NormalLabel}"/>
-        <ComboBox x:Name="PostCB"
+        <ComboBox x:Name="GenderCB"
                  Grid.Row="5" Grid.Column="5"
                      SelectedItem="{Binding Post}"
-                          DisplayMemberPath="NamePost"
-                          SelectedValuePath="IdPost"
+                          DisplayMemberPath="NameGender"
+                          SelectedValuePath="IdGender"
                   HorizontalContentAlignment="Left"
                   Width="260" Height="50"/>
 
         <Button x:Name="AddEmployeeBtn"
                 Click="AddEmployeeBtn_Click"
                 Width="270"
-                Grid.Column="4" Grid.Row="7"
+                Grid.Column="5" Grid.Row="7"
                 BorderBrush="#09487a"
                 BorderThickness="2"
                 Style="{DynamicResource menuButton2}"
-                HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="62,29,0,29">
+                HorizontalAlignment="Center" Margin="0,29,0,29">
 
             <StackPanel Orientation="Horizontal" Height="37" Margin="37,0,21,0">
-                <TextBlock Text="Добавить сотрудника" Foreground="#09487a" FontSize="16" FontWeight="SemiBold" Height="23" Width="166"/>
+                <TextBlock Text="Добавить сотрудника" Foreground="#09487a" FontSize="16"
+                           FontWeight="SemiBold" Height="23" Width="166"/>
             </StackPanel>
         </Button>
 
@@ -91,7 +92,8 @@
                 Style="{DynamicResource menuButton2}"
                 HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Width="60" Height="37">
-                <TextBlock Text="Назад" Foreground="#09487a" FontSize="16" FontWeight="SemiBold" Width="51" Height="25"/>
+                <TextBlock Text="Назад" Foreground="#09487a" FontSize="16"
+                           FontWeight="SemiBold" Width="51" Height="25" Margin="8,0,0,0"/>
             </StackPanel>
         </Button>
     </Grid>

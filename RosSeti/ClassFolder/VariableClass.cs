@@ -8,5 +8,11 @@ namespace RosSeti.ClassFolder
 {
     internal class VariableClass
     {
+        public static int UserId { get; set; }
+
+        public static int StaffId { get; set; }
+
+        public static int ZakazId { get; set; }
+
     }
 }

@@ -5,10 +5,101 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RosSeti.PageFolder.DirectorFolder"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="900"
       Title="EditStaffPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Фамилия" Grid.Column="1"
+               Grid.Row="1" Style="{DynamicResource NormalLabel}"/>
+        <TextBox x:Name="LastNameTB"
+                 Grid.Row="1" Grid.Column="2"
+                 Style="{DynamicResource TextBox2}"
+                 Text="{Binding LastNameStaff}"/>
+
+        <Label Content="Имя" Grid.Column="1"
+               Grid.Row="3" Style="{DynamicResource NormalLabel}"/>
+        <TextBox x:Name="FirstNameTB"
+                 Grid.Row="3" Grid.Column="2"
+                 Style="{DynamicResource TextBox2}"
+                 Text="{Binding FirstNameStaff}"/>
+
+        <Label Content="Отчество" Grid.Column="1"
+               Grid.Row="5" Style="{DynamicResource NormalLabel}"/>
+        <TextBox x:Name="MiddleNameTB"
+                 Grid.Row="5" Grid.Column="2"
+                 Style="{DynamicResource TextBox2}"
+                 Text="{Binding MiddleNameStaff}"/>
+
+        <Label Content="Телефон" Grid.Column="4"
+               Grid.Row="1" Style="{DynamicResource NormalLabel}"/>
+        <TextBox x:Name="PhoneNumberTB"
+                 Grid.Row="1" Grid.Column="5"
+                 Style="{DynamicResource TextBox2}"
+                 Text="{Binding PhoneNumberStaff}"/>
+
+        <Label Content="Почта" Grid.Column="4"
+               Grid.Row="3" Style="{DynamicResource NormalLabel}"/>
+        <TextBox x:Name="EmailTB"
+                 Grid.Row="3" Grid.Column="5"
+                 Style="{DynamicResource TextBox2}"
+                 Text="{Binding EmailStaff}"/>
+
+        <Label Content="Пол" Grid.Column="4"
+               Grid.Row="5" Style="{DynamicResource NormalLabel}"/>
+        <ComboBox x:Name="GenderCB"
+                 Grid.Row="5" Grid.Column="5"
+                     SelectedItem="{Binding Gender}"
+                          DisplayMemberPath="NameGender"
+                          SelectedValuePath="IdGender"
+                  HorizontalContentAlignment="Left"
+                  Width="260" Height="50"/>
+
+        <Button x:Name="EditEmployeeBtn"
+                Click="EditEmployeeBtn_Click"
+                Width="270"
+                Grid.Column="5" Grid.Row="7"
+                BorderBrush="#09487a"
+                BorderThickness="2"
+                Style="{DynamicResource menuButton2}"
+                HorizontalAlignment="Center" Margin="0,29,0,29">
+
+            <StackPanel Orientation="Horizontal" Height="37" Margin="37,0,21,0">
+                <TextBlock Text="Изменить сотрудника" Foreground="#09487a" FontSize="16"
+                           FontWeight="SemiBold" Height="23" Width="166"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="BackBtn"
+                Click="BackBtn_Click"
+                Width="120"
+                Grid.Column="1" Grid.Row="11"
+                Style="{DynamicResource menuButton2}"
+                HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Width="60" Height="37">
+                <TextBlock Text="Назад" Foreground="#09487a" FontSize="16" FontWeight="SemiBold"
+                           Width="49" Height="25" Margin="8,0,0,0"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

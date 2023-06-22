@@ -41,39 +41,38 @@
                 <DataGridTextColumn x:Name="dgTcIdEmployee"
                                     Header="№ п/п"
                                     Width="150"
-                                    Binding="{Binding IdEmployee}"/>
+                                    Binding="{Binding IdStaff}"/>
 
                 <DataGridTextColumn x:Name="dgTcLastNameEmployee"
                                     Header="Фамилия"
                                     Width="200"
-                                    Binding="{Binding LastNameEmployee}"/>
+                                    Binding="{Binding LastNameStaff}"/>
 
                 <DataGridTextColumn x:Name="dgTcFirstNameEmployee"
                                     Header="Имя"
                                     Width="200"
-                                    Binding="{Binding FirstNameEmployee}"/>
+                                    Binding="{Binding FirstNameStaff}"/>
 
                 <DataGridTextColumn x:Name="dgTcMiddleNameEmployee"
                                     Header="Отчество"
                                     Width="200"
-                                    Binding="{Binding MiddleNameEmployee}"/>
+                                    Binding="{Binding MiddleNameStaff}"/>
 
                 <DataGridTextColumn x:Name="dgTcPhoneNumberEmployee"
                                     Header="Телефон"
                                     Width="200"
-                                    Binding="{Binding PhoneNumberEmployee}"/>
+                                    Binding="{Binding PhoneNumberStaff}"/>
 
                 <DataGridTextColumn x:Name="dgTcEmailEmployee"
                                     Header="Почта"
                                     Width="200"
-                                    Binding="{Binding EmailEmployee}"/>
+                                    Binding="{Binding EmailStaff}"/>
 
                 <DataGridTextColumn x:Name="dgTcNamePost"
-                                    Header="Должность"
+                                    Header="Пол"
                                     Width="200"
-                                    Binding="{Binding Post.NamePost}"/>
+                                    Binding="{Binding Gender.NameGender}"/>
             </DataGrid.Columns>
-
         </DataGrid>
     </Grid>
 </Page>

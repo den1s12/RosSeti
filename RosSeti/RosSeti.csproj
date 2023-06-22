@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +70,61 @@
     </Compile>
     <Compile Include="ClassFolder\MBClass.cs" />
     <Compile Include="ClassFolder\VariableClass.cs" />
+    <Compile Include="DataFolder\Cabel.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\ContextClass.cs" />
+    <Compile Include="DataFolder\DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\Gender.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\Infa.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\Role.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\sp_helpdiagrams_Result.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\Staff.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\sysdiagrams.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\User.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFolder\Zakaz.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\AddUserPage.xaml.cs">
+      <DependentUpon>AddUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\EditUserPage.xaml.cs">
+      <DependentUpon>EditUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListUserPage.xaml.cs">
+      <DependentUpon>ListUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\DirectorFolder\AddStaffPage.xaml.cs">
       <DependentUpon>AddStaffPage.xaml</DependentUpon>
     </Compile>
@@ -69,6 +133,12 @@
     </Compile>
     <Compile Include="PageFolder\DirectorFolder\ListStaffPage.xaml.cs">
       <DependentUpon>ListStaffPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\ManagerFolder\ListZakazPage.xaml.cs">
+      <DependentUpon>ListZakazPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowFolder\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowFolder\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
@@ -98,6 +168,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DataFolder\DBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataFolder\DBModel.edmx.diagram">
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +185,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="PageFolder\AdminFolder\AddUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\EditUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\DirectorFolder\AddStaffPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,7 +209,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\ManagerFolder\ListZakazPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceFolder\Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowFolder\AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,9 +233,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataFolder\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ResourceFolder\Background.png" />
@@ -177,5 +272,21 @@
   <ItemGroup>
     <Resource Include="ResourceFolder\photo_2023-06-21_19-20-06.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataFolder\DBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataFolder\DBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
