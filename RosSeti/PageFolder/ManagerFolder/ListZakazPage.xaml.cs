@@ -1,5 +1,7 @@
 ﻿using RosSeti.ClassFolder;
 using RosSeti.DataFolder;
+using RosSeti.PageFolder.AdminFolder;
+using RosSeti.WindowFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,33 +38,64 @@ namespace RosSeti.PageFolder.ManagerFolder
 
         private void ListZakazDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //if (ListEmployeeDG.SelectedItem == null)
-            //{
-            //    MBClass.ErrorMB("Вы не выбрали строку");
-            //}
-            //else
-            //{
-            //    try
-            //    {
-            //        Zakaz zakaz = ListZakazDG.SelectedItem as Zakaz;
-            //        VariableClass.ZakazId = zakaz.IdZakaz;
-            //        NavigationService.Navigate(new EditEmployeePage(employee));
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MBClass.ErrorMB(ex);
-            //    }
-            //}
+            if (ListZakazDG.SelectedItem == null)
+            {
+                MBClass.ErrorMB("Вы не выбрали строку");
+            }
+            else
+            {
+                try
+                {
+                    Zakaz zakaz = ListZakazDG.SelectedItem as Zakaz;
+                    VariableClass.ZakazId = zakaz.IdZakaz;
+                    NavigationService.Navigate(new EditZakazPage(zakaz));
+                }
+                catch (Exception ex)
+                {
+                    MBClass.ErrorMB(ex);
+                }
+            }
         }
 
         private void EditM_Click(object sender, RoutedEventArgs e)
         {
+            if (ListZakazDG.SelectedItem == null)
+            {
+                MBClass.ErrorMB("Выберите " +
+                    "пользователя для редактирования");
+            }
 
+            Zakaz zakaz = ListZakazDG.SelectedItem as Zakaz;
+            VariableClass.ZakazId = zakaz.IdZakaz;
+            NavigationService.Navigate(new EditZakazPage(zakaz));
         }
 
         private void DeleteM_Click(object sender, RoutedEventArgs e)
         {
+            Zakaz zakaz = ListZakazDG.SelectedItem as Zakaz;
 
+            if (ListZakazDG.SelectedItem == null)
+            {
+                MBClass.ErrorMB("Выберите пользователя" +
+                    "для удаления");
+            }
+            else
+            {
+                if (MBClass.QuestionMB("Удалить заказ?"))
+                {
+                    DBEntities.GetContext().Zakaz.Remove(zakaz);
+                    DBEntities.GetContext().SaveChanges();
+
+                    MessageBox.Show("Заказ удален");
+                    ListZakazDG.ItemsSource = DBEntities.GetContext()
+                        .Zakaz.ToList().OrderBy(u => zakaz.IdZakaz);
+                }
+            }
+        }
+
+        private void InfaM_Click(object sender, RoutedEventArgs e)
+        {
+            new ListInfaWindow().ShowDialog();
         }
     }
 }

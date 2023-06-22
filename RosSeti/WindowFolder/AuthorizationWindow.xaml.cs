@@ -1,4 +1,5 @@
 ﻿using RosSeti.ClassFolder;
+using RosSeti.DataFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,75 +50,76 @@ namespace RosSeti.WindowFolder
                 MBClass.ErrorMB("Введите пароль");
                 PasswordPsb.Focus();
             }
-            //else
-            //{
-            //    try
-            //    {
-            //        var user = DBEntities.GetContext()
-            //            .User.FirstOrDefault(u => u.LoginUser == LoginTb.Text);
+            else
+            {
+                try
+                {
+                    var user = DBEntities.GetContext()
+                        .User.FirstOrDefault(u => u.Login == LoginTb.Text);
 
-            //        if (user == null)
-            //        {
-            //            MBClass.ErrorMB("Введен не верный логин");
-            //            LoginTb.Focus();
-            //            return;
-            //        }
+                    if (user == null)
+                    {
+                        MBClass.ErrorMB("Введен не верный логин");
+                        LoginTb.Focus();
+                        return;
+                    }
 
-            //        if (user.PasswordUser != PasswordPsb.Password)
-            //        {
-            //            MBClass.ErrorMB("Введен не верный пароль");
-            //            PasswordPsb.Focus();
-            //            return;
-            //        }
-            //        else
-            //        {
-            //            switch (user.IdRole)
-            //            {
-            //                case 1:
-            //                    new AdminFolder.AdminWindow().ShowDialog();
-            //                    break;
+                    if (user.Password != PasswordPsb.Password)
+                    {
+                        MBClass.ErrorMB("Введен не верный пароль");
+                        PasswordPsb.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        switch (user.IdRole)
+                        {
+                            case 1:
+                                new AdminWindow().ShowDialog();
+                                break;
 
-            //                case 2:
-            //                    new ManagerFolder.ManagerWindow().ShowDialog();
-            //                    break;
+                            case 2:
+                                new ManagerWindow().ShowDialog();
+                                break;
 
-            //                case 3:
-            //                    new DirectorFolder.DirectorWindow().ShowDialog();
-            //                    break;
-            //            }
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MBClass.ErrorMB(ex);
-            //    }
-            //}
+                            case 3:
+                                new DirectorWindow().ShowDialog();
+                                break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MBClass.ErrorMB(ex);
+                }
+            }
         }
 
         private void LoginTb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            LoginTb.Focus();
-        }
-
-        private void PasswordPsb_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            PasswordPsb.Focus();
-        }
-
-        private void textLogin_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (!string.IsNullOrEmpty(LoginTb.Text) && LoginTb.Text.Length > 0)
                 textLogin.Visibility = Visibility.Collapsed;
             else
                 textLogin.Visibility = Visibility.Visible;
+            
         }
 
-        private void textPassword_MouseDown(object sender, MouseButtonEventArgs e)
+        private void PasswordPsb_PasswordChanged(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(PasswordPsb.Password) && PasswordPsb.Password.Length > 0)
                 textPassword.Visibility = Visibility.Collapsed;
             else
                 textPassword.Visibility = Visibility.Visible;
+        }
+
+        private void textLogin_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginTb.Focus();
+        }
+
+        private void textPassword_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PasswordPsb.Focus();
         }
     }
 }

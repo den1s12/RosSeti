@@ -134,8 +134,20 @@
     <Compile Include="PageFolder\DirectorFolder\ListStaffPage.xaml.cs">
       <DependentUpon>ListStaffPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\ManagerFolder\AddZakazPage.xaml.cs">
+      <DependentUpon>AddZakazPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\ManagerFolder\EditZakazPage.xaml.cs">
+      <DependentUpon>EditZakazPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\ManagerFolder\ListZakazPage.xaml.cs">
       <DependentUpon>ListZakazPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowFolder\AddCableWindow.xaml.cs">
+      <DependentUpon>AddCableWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowFolder\AddInfaWindow.xaml.cs">
+      <DependentUpon>AddInfaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowFolder\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
@@ -145,6 +157,9 @@
     </Compile>
     <Compile Include="WindowFolder\DirectorWindow.xaml.cs">
       <DependentUpon>DirectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowFolder\ListInfaWindow.xaml.cs">
+      <DependentUpon>ListInfaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowFolder\ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
@@ -209,11 +224,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\ManagerFolder\AddZakazPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\ManagerFolder\EditZakazPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\ManagerFolder\ListZakazPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourceFolder\Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowFolder\AddCableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowFolder\AddInfaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,6 +257,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowFolder\DirectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowFolder\ListInfaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

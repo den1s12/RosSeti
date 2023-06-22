@@ -134,7 +134,8 @@
             </Grid>
             <Image Source="/ResourceFolder/close.png" 
                Grid.Column="1" Panel.ZIndex="1" 
-               MouseUp="Image_MouseUp"
+               x:Name="CloseImg"
+               MouseLeftButtonDown="CloseImg_MouseLeftButtonDown"
                Width="30" Height="30" Margin="939,10,10,680"/>
         </Grid>
     </Border>

@@ -82,7 +82,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/ResourceFolder/Add2.png" 
                                        Height="14" Width="22"/>
-                                    <TextBlock Text="Добавление сотрудника" Foreground="#09487a" FontSize="13" FontWeight="SemiBold" Margin="5 0 0 0"/>
+                                    <TextBlock Text="Добавление заказа" Foreground="#09487a" FontSize="13" FontWeight="SemiBold" Margin="5 0 0 0"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>

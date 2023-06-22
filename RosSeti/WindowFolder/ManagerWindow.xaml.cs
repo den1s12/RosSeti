@@ -1,4 +1,5 @@
-﻿using RosSeti.PageFolder.DirectorFolder;
+﻿using RosSeti.ClassFolder;
+using RosSeti.PageFolder.DirectorFolder;
 using RosSeti.PageFolder.ManagerFolder;
 using System;
 using System.Collections.Generic;
@@ -29,27 +30,31 @@ namespace RosSeti.WindowFolder
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
 
         private void ListBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ManagerFrame.Navigate(new ListZakazPage());
         }
 
         private void AddZakaz_Click(object sender, RoutedEventArgs e)
         {
-
+            ManagerFrame.Navigate(new AddZakazPage());
         }
 
         private void ChangeProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
+            new AuthorizationWindow().ShowDialog();
         }
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            MBClass.ExitMB();
         }
     }
 }

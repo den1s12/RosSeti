@@ -1,12 +1,12 @@
-﻿<Page x:Class="RosSeti.PageFolder.DirectorFolder.AddStaffPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:RosSeti.PageFolder.DirectorFolder"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="900">
-
+﻿<Window x:Class="RosSeti.WindowFolder.AddInfaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RosSeti.WindowFolder"
+        mc:Ignorable="d"
+        Height="400" Width="900">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,67 +19,64 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="10"/>
-            <RowDefinition/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Фамилия" Grid.Column="1"
+        <Label Content="Номер договора" Grid.Column="1"
                Grid.Row="1" Style="{DynamicResource NormalLabel}"/>
-        <TextBox x:Name="LastNameTB"
+        <TextBox x:Name="NomerDogovoraTB"
                  Grid.Row="1" Grid.Column="2"
                  Style="{DynamicResource TextBox2}"/>
 
-        <Label Content="Имя" Grid.Column="1"
+        <Label Content="Почта" Grid.Column="1"
                Grid.Row="3" Style="{DynamicResource NormalLabel}"/>
-        <TextBox x:Name="FirstNameTB"
+        <TextBox x:Name="EmailPokupTB"
                  Grid.Row="3" Grid.Column="2"
                  Style="{DynamicResource TextBox2}"/>
 
-        <Label Content="Отчество" Grid.Column="1"
+        <Label Content="Телефон" Grid.Column="1"
                Grid.Row="5" Style="{DynamicResource NormalLabel}"/>
-        <TextBox x:Name="MiddleNameTB"
+        <TextBox x:Name="PhonePokupTB"
                  Grid.Row="5" Grid.Column="2"
                  Style="{DynamicResource TextBox2}"/>
 
-        <Label Content="Телефон" Grid.Column="4"
+        <Label Content="Что-то" Grid.Column="4"
                Grid.Row="1" Style="{DynamicResource NormalLabel}"/>
-        <TextBox x:Name="PhoneNumberTB"
+        <TextBox x:Name="ZhiteTB"
                  Grid.Row="1" Grid.Column="5"
                  Style="{DynamicResource TextBox2}"/>
 
-        <Label Content="Почта" Grid.Column="4"
+        <Label Content="Серия паспорта" Grid.Column="4"
                Grid.Row="3" Style="{DynamicResource NormalLabel}"/>
-        <TextBox x:Name="EmailTB"
+        <TextBox x:Name="PassportSeriesTB"
                  Grid.Row="3" Grid.Column="5"
                  Style="{DynamicResource TextBox2}"/>
 
-        <Label Content="Пол" Grid.Column="4"
-               Grid.Row="5" Style="{DynamicResource NormalLabel}"/>
-        <ComboBox x:Name="GenderCB"
+        <Label Content="Номер паспорта" Grid.Column="4"
+               Grid.Row="5" Style="{DynamicResource NormalLabel}" Margin="0,10,10,10"/>
+        <TextBox x:Name="PassportNumberTB"
                  Grid.Row="5" Grid.Column="5"
-                     SelectedItem="{Binding Post}"
-                          DisplayMemberPath="NameGender"
-                          SelectedValuePath="IdGender"
-                  HorizontalContentAlignment="Left"
-                  Width="260" Height="50"/>
+                 Style="{DynamicResource TextBox2}"/>
 
-        <Button x:Name="AddEmployeeBtn"
-                Click="AddEmployeeBtn_Click"
+        <Button x:Name="AddInfaBtn"
+                Click="AddInfaBtn_Click"
                 Width="270"
                 Grid.Column="5" Grid.Row="7"
                 BorderBrush="#09487a"
                 BorderThickness="2"
                 Style="{DynamicResource menuButton2}"
-                HorizontalAlignment="Center" Margin="0,29,0,29">
+                HorizontalAlignment="Center">
 
             <StackPanel Orientation="Horizontal" Height="37" Margin="37,0,21,0">
-                <TextBlock Text="Добавить сотрудника" Foreground="#09487a" FontSize="16"
+                <TextBlock Text="Добавить информацию" Foreground="#09487a" FontSize="16"
                            FontWeight="SemiBold" Height="23" Width="166"/>
             </StackPanel>
         </Button>
@@ -87,7 +84,7 @@
         <Button x:Name="BackBtn"
                 Click="BackBtn_Click"
                 Width="120"
-                Grid.Column="1" Grid.Row="11"
+                Grid.Column="1" Grid.Row="7"
                 Style="{DynamicResource menuButton2}"
                 HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Width="60" Height="37">
@@ -96,4 +93,4 @@
             </StackPanel>
         </Button>
     </Grid>
-</Page>
+</Window>

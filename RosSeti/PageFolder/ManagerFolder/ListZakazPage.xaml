@@ -33,6 +33,8 @@
                     <MenuItem Header="Редактирование" x:Name="EditM" Click="EditM_Click"/>
                     <Separator/>
                     <MenuItem Header="Удалить" x:Name="DeleteM" Click="DeleteM_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Информация" x:Name="InfaM" Click="InfaM_Click"/>
                 </ContextMenu>
             </DataGrid.ContextMenu>
 
@@ -51,40 +53,11 @@
                                     Header="Тип кабеля"
                                     Width="200"
                                     Binding="{Binding Cabel.TypeCable}"/>
-
-                <DataGridTextColumn x:Name="dgTcAddress"
+                
+                <DataGridTextColumn x:Name="dgTcAdress"
                                     Header="Адрес"
                                     Width="200"
                                     Binding="{Binding Address}"/>
-                <DataGridTextColumn x:Name="dgTcNomerDogovora"
-                                    Header="Номер договора"
-                                    Width="200"
-                                    Binding="{Binding Infa.NomerDogovora}"/>
-
-                <DataGridTextColumn x:Name="dgTcEmailPokup"
-                                    Header="Почта заказчика"
-                                    Width="200"
-                                    Binding="{Binding Infa.EmailPokup}"/>
-                
-                <DataGridTextColumn x:Name="dgTcPhonePokup"
-                                    Header="Телефон заказчика"
-                                    Width="200"
-                                    Binding="{Binding Infa.PhonePokup}"/>
-
-                <DataGridTextColumn x:Name="dgTcZhite"
-                                    Header="Что-то"
-                                    Width="200"
-                                    Binding="{Binding Infa.Zhite}"/>
-
-                <DataGridTextColumn x:Name="dgTcPassportSeries"
-                                    Header="Серия паспорта"
-                                    Width="200"
-                                    Binding="{Binding Infa.PassportSeries}"/>
-                
-                <DataGridTextColumn x:Name="dgTcPassportNumber"
-                                    Header="Номер паспорта"
-                                    Width="200"
-                                    Binding="{Binding Infa.PassportNumber}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

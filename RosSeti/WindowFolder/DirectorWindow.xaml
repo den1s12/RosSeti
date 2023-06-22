@@ -67,8 +67,7 @@
                         <!--Menu Buttons-->
                         <StackPanel DockPanel.Dock="Top" >
                             <Button x:Name="AddList" Style="{StaticResource menuButton}"
-                                    Click="AddList_Click"
-                                    Hyperlink.Click="AddList_Click_1">
+                                    Click="AddList_Click">
                                
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/ResourceFolder/List.png" 
@@ -127,7 +126,7 @@
             </Grid>
             <Image Source="/ResourceFolder/close.png" 
                Grid.Column="1" Panel.ZIndex="1" 
-               MouseUp="Image_MouseUp"
+               MouseLeftButtonDown="Image_MouseLeftButtonDown"
                Width="30" Height="30" Margin="939,10,10,680"/>
         </Grid>
     </Border>

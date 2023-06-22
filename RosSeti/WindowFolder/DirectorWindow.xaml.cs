@@ -1,4 +1,5 @@
-﻿using RosSeti.PageFolder.DirectorFolder;
+﻿using RosSeti.ClassFolder;
+using RosSeti.PageFolder.DirectorFolder;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,7 +30,10 @@ namespace RosSeti.WindowFolder
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
 
         private void AddList_Click(object sender, RoutedEventArgs e)
@@ -49,12 +53,13 @@ namespace RosSeti.WindowFolder
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            this.Close();
+            new AuthorizationWindow().ShowDialog();
         }
 
-        private void AddList_Click_1(object sender, RoutedEventArgs e)
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Process.Start("https://metanit.com/sharp/wpf/5.1.php");
+            MBClass.ExitMB();
         }
     }
 }

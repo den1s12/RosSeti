@@ -48,10 +48,11 @@ namespace RosSeti.WindowFolder
 
         private void ChangeProfileBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.Close();
+            new AuthorizationWindow().ShowDialog();
         }
 
-        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        private void CloseImg_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MBClass.ExitMB();
         }
