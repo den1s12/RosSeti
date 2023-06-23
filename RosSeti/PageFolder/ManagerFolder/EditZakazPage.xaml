@@ -53,7 +53,8 @@
                           DisplayMemberPath="NomerDogovora"
                           SelectedValuePath="IdInfa"
                   HorizontalContentAlignment="Left"
-                  Width="280" Height="50"/>
+                  Width="280" Height="50"
+                  Style="{DynamicResource ComboBox}"/>
 
         <Button x:Name="EditZakazBtn"
                 Click="EditZakazBtn_Click"

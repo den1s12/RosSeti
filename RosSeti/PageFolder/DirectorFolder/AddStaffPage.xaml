@@ -67,7 +67,8 @@
                           DisplayMemberPath="NameGender"
                           SelectedValuePath="IdGender"
                   HorizontalContentAlignment="Left"
-                  Width="260" Height="50"/>
+                  Width="260" Height="50"
+                  Style="{DynamicResource ComboBox}"/>
 
         <Button x:Name="AddEmployeeBtn"
                 Click="AddEmployeeBtn_Click"

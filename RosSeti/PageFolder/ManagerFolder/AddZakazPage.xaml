@@ -53,7 +53,8 @@
                           DisplayMemberPath="NomerDogovora"
                           SelectedValuePath="IdInfa"
                   HorizontalContentAlignment="Left"
-                  Width="280" Height="50"/>
+                  Width="280" Height="50"
+                  Style="{DynamicResource ComboBox}"/>
 
         <Image Source="/ResourceFolder/Add.png"
                x:Name="Cable" Width="20" Height="20" Grid.Row="1" Grid.Column="3"
