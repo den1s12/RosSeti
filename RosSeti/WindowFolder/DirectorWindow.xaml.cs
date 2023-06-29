@@ -43,7 +43,8 @@ namespace RosSeti.WindowFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
+            new AuthorizationWindow().ShowDialog();
         }
 
         private void AddStorage_Click(object sender, RoutedEventArgs e)
