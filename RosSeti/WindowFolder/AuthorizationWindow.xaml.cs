@@ -75,8 +75,9 @@ namespace RosSeti.WindowFolder
                         switch (user.IdRole)
                         {
                             case 1:
-                                new AdminWindow().ShowDialog();
+                                new AdminWindow().ShowDialog();                                
                                 break;
+                                
 
                             case 2:
                                 new ManagerWindow().ShowDialog();

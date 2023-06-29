@@ -305,9 +305,6 @@
     <Resource Include="ResourceFolder\Icon2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ResourceFolder\photo_2023-06-21_19-20-06.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +318,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResourceFolder\Logo.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

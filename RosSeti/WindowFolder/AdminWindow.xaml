@@ -54,7 +54,7 @@
                                 DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
                             <Ellipse>
                                 <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/ResourceFolder/photo_2023-06-21_19-20-06.jpg"/>
+                                    <ImageBrush ImageSource="/ResourceFolder/Logo.jpg"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                         </Border>
